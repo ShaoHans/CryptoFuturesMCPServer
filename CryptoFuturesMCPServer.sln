@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoFuturesMCPServer", "CryptoFuturesMCPServer\CryptoFuturesMCPServer.csproj", "{81974679-C3F2-47BA-BE12-1CA02AE986BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoFuturesClient", "CryptoFuturesClient\CryptoFuturesClient.csproj", "{B49B3507-3E31-41B4-86CA-4E0F78B08F70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{81974679-C3F2-47BA-BE12-1CA02AE986BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81974679-C3F2-47BA-BE12-1CA02AE986BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81974679-C3F2-47BA-BE12-1CA02AE986BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49B3507-3E31-41B4-86CA-4E0F78B08F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49B3507-3E31-41B4-86CA-4E0F78B08F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49B3507-3E31-41B4-86CA-4E0F78B08F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49B3507-3E31-41B4-86CA-4E0F78B08F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
