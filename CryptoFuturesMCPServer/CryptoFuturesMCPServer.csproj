@@ -16,6 +16,7 @@
     <PackageId>CryptoFuturesMCPServer</PackageId>
     <PackageVersion>0.0.1</PackageVersion>
     <PackageTags>AI; MCP; server; stdio</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>An MCP server that Retrieve Futures Information from Exchange.</Description>
   </PropertyGroup>
 
