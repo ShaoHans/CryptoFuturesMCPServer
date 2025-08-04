@@ -1,12 +1,12 @@
 {
   "$schema": "https://modelcontextprotocol.io/schemas/draft/2025-07-09/server.json",
-  "description": "<your description here>",
+  "description": "An MCP server that Retrieve Futures Information from Exchange",
   "name": "io.github.ShaoHans/CryptoFuturesMCPServer",
   "packages": [
     {
       "registry_name": "nuget",
       "name": "CryptoFuturesMCPServer",
-      "version": "0.1.0-beta",
+      "version": "0.0.1",
       "package_arguments": [],
       "environment_variables": []
     }
@@ -16,6 +16,6 @@
     "source": "github"
   },
   "version_detail": {
-    "version": "0.1.0-beta"
+    "version": "0.0.1"
   }
 }
