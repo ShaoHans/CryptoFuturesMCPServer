@@ -1,4 +1,5 @@
 using AspNetCoreMCPServer.Tools;
+using OKX.Api;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
@@ -17,7 +18,10 @@ builder.Services.AddMcpServer()
 //    .WithLogging()
 //    .UseOtlpExporter();
 
+builder.Services.AddSingleton<OkxRestApiClient>();
+
 var app = builder.Build();
+
 
 app.MapMcp();
 
