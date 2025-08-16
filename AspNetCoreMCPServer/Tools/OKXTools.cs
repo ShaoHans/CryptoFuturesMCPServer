@@ -5,22 +5,15 @@ using OKX.Api.Common;
 
 namespace AspNetCoreMCPServer.Tools;
 
-internal sealed class OKXTools
+internal sealed class OKXTools(OkxRestApiClient okxRestApiClient)
 {
-    private readonly OkxRestApiClient _okxRestApiClient;
-
-    public OKXTools(OkxRestApiClient okxRestApiClient)
-    {
-        _okxRestApiClient = okxRestApiClient;
-    }
-
     [McpServerTool]
     [Description("Retrieve futures mark price from OKX spot.")]
     public async Task<decimal> GetMarkPriceAsync(
         [Description("The symbol to get the mark price for.")] string symbol
     )
     {
-        var result = await _okxRestApiClient.Public.GetMarkPricesAsync(
+        var result = await okxRestApiClient.Public.GetMarkPricesAsync(
             OkxInstrumentType.Swap,
             instrumentId: $"{symbol}-SWAP"
         );
