@@ -1,5 +1,6 @@
 using AspNetCoreMCPServer.Tools;
 using OKX.Api;
+using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
@@ -8,15 +9,15 @@ builder.Services.AddMcpServer()
     .WithHttpTransport()
     .WithTools<OKXTools>();
 
-//builder.Services.AddOpenTelemetry()
-//    .WithTracing(b => b.AddSource("*")
-//        .AddAspNetCoreInstrumentation()
-//        .AddHttpClientInstrumentation())
-//    .WithMetrics(b => b.AddMeter("*")
-//        .AddAspNetCoreInstrumentation()
-//        .AddHttpClientInstrumentation())
-//    .WithLogging()
-//    .UseOtlpExporter();
+builder.Services.AddOpenTelemetry()
+    .WithTracing(b => b.AddSource("*")
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation())
+    .WithMetrics(b => b.AddMeter("*")
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation())
+    .WithLogging()
+    .UseOtlpExporter();
 
 builder.Services.AddSingleton<OkxRestApiClient>();
 
