@@ -5,7 +5,10 @@ using ModelContextProtocol.Server;
 
 namespace AspNetCoreMCPServer.Tools;
 
-internal sealed class KlicklTools(KlicklFuturesClient klicklFuturesClient)
+internal sealed class KlicklTools(
+    KlicklFuturesClient klicklFuturesClient,
+    KlicklSpotClient klicklSpotClient
+)
 {
     [McpServerTool]
     [Description("Retrieve specified futures symbol real-time market data from Klickl.")]
@@ -23,5 +26,12 @@ internal sealed class KlicklTools(KlicklFuturesClient klicklFuturesClient)
     public async Task<List<FuturesRealTimeHandicapDto>> GetFuturesRealTimeHandicapsAsync()
     {
         return await klicklFuturesClient.GetFuturesRealTimeHandicapsAsync();
+    }
+
+    [McpServerTool]
+    [Description("Retrieve spot real-time market rank data from Klickl.")]
+    public async Task<SpotMarketRankDto> GetSpotMarketRankAsync()
+    {
+        return await klicklSpotClient.GetSpotMarketRankAsync();
     }
 }

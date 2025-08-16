@@ -4,19 +4,13 @@ using Microsoft.Extensions.Options;
 
 namespace AspNetCoreMCPServer.Clients;
 
-internal class KlicklFuturesClient
+internal class KlicklFuturesClient(
+    IHttpClientFactory httpClientFactory,
+    IOptions<JsonSerializerOptions> options
+)
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _jsonSerializerOptions;
-
-    public KlicklFuturesClient(
-        IHttpClientFactory httpClientFactory,
-        IOptions<JsonSerializerOptions> options
-    )
-    {
-        _httpClient = httpClientFactory.CreateClient("KlicklFutures");
-        _jsonSerializerOptions = options.Value;
-    }
+    private readonly HttpClient _httpClient = httpClientFactory.CreateClient("KlicklFutures");
+    private readonly JsonSerializerOptions _jsonSerializerOptions = options.Value;
 
     public async Task<List<FuturesRealTimeHandicapDto>> GetFuturesRealTimeHandicapsAsync()
     {
