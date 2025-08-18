@@ -13,6 +13,7 @@ internal sealed class KlicklTools(
     [McpServerTool]
     [Description("Retrieve specified futures symbol real-time market data from Klickl.")]
     public async Task<FuturesRealTimeHandicapDto?> GetFuturesRealTimeHandicapAsync(
+        IHttpContextAccessor httpContextAccessor,
         [Description("the futures symbol")] string symbol
     )
     {

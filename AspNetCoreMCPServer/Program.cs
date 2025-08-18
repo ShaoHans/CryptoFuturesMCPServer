@@ -7,7 +7,11 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddMcpServer().WithHttpTransport().WithTools<OKXTools>().WithTools<KlicklTools>();
+builder
+    .Services.AddMcpServer()
+    .WithHttpTransport()
+    //.WithTools<OKXTools>()
+    .WithTools<KlicklTools>();
 
 builder
     .Services.AddOpenTelemetry()
@@ -39,7 +43,7 @@ builder.Services.Configure<JsonSerializerOptions>(options =>
 {
     options.PropertyNameCaseInsensitive = true;
 });
-
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 app.MapMcp();
 app.Run();
